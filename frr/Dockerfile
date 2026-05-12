@@ -1,12 +1,14 @@
-FROM debian:buster
-MAINTAINER Rob Gil (rob@rem5.com)
+#FROM debian:buster
+FROM ubuntu:24.04
+LABEL maintainer="rob@rem5.com"
+LABEL description="Rob Gil"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
 
 RUN apt-get update && \
     apt-get install -y libpcre3-dev apt-transport-https ca-certificates curl wget logrotate \
-    libc-ares2 libjson-c3 vim procps libreadline7 gnupg2 lsb-release apt-utils && \
+    libc-ares2 libjson-c5 vim procps libreadline8 gnupg2 lsb-release apt-utils && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -s https://deb.frrouting.org/frr/keys.asc | apt-key add -

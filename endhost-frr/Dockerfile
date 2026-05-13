@@ -1,4 +1,4 @@
-FROM frr-debian:10.2
+FROM hnkeyang/frr:10.6.1
 
 RUN apt-get update && \
     apt-get install -y \

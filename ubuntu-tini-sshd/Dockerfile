@@ -3,7 +3,9 @@ FROM ubuntu:24.04
 
 # Install OpenSSH server and necessary packages
 RUN apt-get update && apt-get install -y openssh-server tini \
-curl wget vim nano iputils-ping net-tools iproute2 procps lsb-release tzdata locales \
+curl wget vim nano procps lsb-release tzdata locales plocate \
+traceroute iputils-ping net-tools iproute2 \
+git tcpdump lrzsz \
 && rm -rf /var/lib/apt/lists/*
 
 # Create SSH directory and set permissions

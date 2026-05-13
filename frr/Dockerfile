@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
-    apt-get install -y tcpdump net-tools iperf3 iptables traceroute bridge-utils && \
+    apt-get install -y tcpdump net-tools iperf3 iptables iputils-ping traceroute bridge-utils && \
     rm -rf /var/lib/apt/lists/*
 
 ADD docker-start /usr/sbin/docker-start
